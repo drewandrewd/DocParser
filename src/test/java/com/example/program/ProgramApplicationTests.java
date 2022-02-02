@@ -18,7 +18,7 @@ class ProgramApplicationTests {
 
 	@Test
 	void createTest() throws IOException {
-		System.out.println(siteService.create());
+		siteService.create();
 	}
 
 	@Autowired

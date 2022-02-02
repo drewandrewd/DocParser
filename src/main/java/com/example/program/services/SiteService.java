@@ -6,5 +6,5 @@ import java.io.IOException;
 
 public interface SiteService {
 
-    String create() throws IOException;
+    void create() throws IOException;
 }

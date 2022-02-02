@@ -20,7 +20,7 @@ public class ProgramApplication {
 
 	@PostConstruct
 	public void doRun() throws IOException {
-		System.out.println(siteService.create());
+		siteService.create();
 	}
 
 	@Autowired

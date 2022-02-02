@@ -1,16 +1,14 @@
 package com.example.program.services;
 
+import com.example.program.components.MapPrinter;
 import com.example.program.components.SiteParser;
 import com.example.program.components.TextParser;
 import com.example.program.components.UrlReader;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.PostConstruct;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Map;
 
 @Service
 public class SiteServiceImpl implements SiteService {
@@ -18,14 +16,14 @@ public class SiteServiceImpl implements SiteService {
     private SiteParser siteParser;
     private UrlReader urlReader;
     private TextParser textParser;
-//    private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
+    private MapPrinter mapPrinter;
 
     @Override
-    public String create() throws IOException {
+    public void create() throws IOException {
         String url = urlReader.readUrl();
         Document fullSite = siteParser.getDocument(url);
-        return textParser.findWords(fullSite);
+        Map<String, Integer> map = textParser.findWords(fullSite);
+        mapPrinter.printMap(map);
     }
 
     @Autowired
@@ -41,5 +39,10 @@ public class SiteServiceImpl implements SiteService {
     @Autowired
     public void setTextParser(TextParser textParser) {
         this.textParser = textParser;
+    }
+
+    @Autowired
+    public void setMapPrinter(MapPrinter mapPrinter) {
+        this.mapPrinter = mapPrinter;
     }
 }
