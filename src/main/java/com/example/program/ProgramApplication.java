@@ -2,7 +2,6 @@ package com.example.program;
 
 import com.example.program.exceptions.SiteNotFoundException;
 import com.example.program.services.SiteService;
-import com.example.program.services.SiteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
