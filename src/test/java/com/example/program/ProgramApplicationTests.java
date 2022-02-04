@@ -1,5 +1,6 @@
 package com.example.program;
 
+import com.example.program.exceptions.SiteNotFoundException;
 import com.example.program.services.SiteService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ class ProgramApplicationTests {
 	}
 
 	@Test
-	void createTest() throws IOException {
+	void createTest() throws IOException, SiteNotFoundException {
 		siteService.create();
 	}
 

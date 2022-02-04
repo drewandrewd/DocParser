@@ -1,5 +1,6 @@
 package com.example.program;
 
+import com.example.program.exceptions.SiteNotFoundException;
 import com.example.program.services.SiteService;
 import com.example.program.services.SiteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class ProgramApplication {
 	}
 
 	@PostConstruct
-	public void doRun() throws IOException {
+	public void doRun() throws IOException, SiteNotFoundException {
 		siteService.create();
 	}
 
