@@ -4,7 +4,7 @@ import com.example.program.exceptions.SiteNotFoundException;
 
 import java.io.IOException;
 
-public interface SiteService {
+public interface DocService {
 
-    void create() throws IOException, SiteNotFoundException;
+    void parse() throws IOException, SiteNotFoundException;
 }

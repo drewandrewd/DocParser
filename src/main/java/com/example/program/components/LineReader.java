@@ -7,9 +7,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 @Component
-public class UrlReader {
+public class LineReader {
 
-    public String readUrl() throws IOException {
+    public String readLine() throws IOException {
+        System.out.println("Введите строку:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         return reader.readLine();
     }
