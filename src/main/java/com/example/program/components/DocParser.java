@@ -1,7 +1,6 @@
 package com.example.program.components;
 
 import com.example.program.models.Doc;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.io.*;
 import java.util.*;
